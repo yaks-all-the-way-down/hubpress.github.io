@@ -4,7 +4,16 @@
     "repositoryName": "hubpress.github.io",
     "branch": "gh-pages"
   },
+  "site": {
+    "title": "Yaks All The Way Down",
+    "description": "Shave time - learn from our time spent shaving yaks!",
+    "logo": "/images/yak.png"
+  },
+  "socialnetwork": {
+    "twitter": "garadox",
+    "github": "garadox"
+  },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
