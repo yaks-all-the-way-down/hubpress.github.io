@@ -1,4 +1,4 @@
-= Streamlining your GitHub code review process with GitHub Pull Request Builder
+= Presenting: GitHub Pull Request Builder
 
 :hp-image: /hubpress.github.io/images/github-status.png
 :published_at: 2016-04-22
