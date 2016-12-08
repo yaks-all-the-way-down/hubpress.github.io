@@ -1,10 +1,22 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
+    "username": "yaks-all-the-way-down",
+    "repositoryName": "hubpress.github.io",
+    "branch": "master",
+    "cname": "yaks-all-the-way-down.com"
+  },
+  "site": {
+    "title": "Yaks All The Way Down",
+    "description": "Save time - let us shave those yaks!",
+    "logo": "/hubpress.github.io/images/yak.png",
+    "cover": "",
+    "googleAnalytics": "UA-77782034-1"
+  },
+  "socialnetwork": {
+    "twitter": "",
+    "github": ""
   },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
