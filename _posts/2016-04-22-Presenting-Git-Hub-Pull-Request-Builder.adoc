@@ -1,6 +1,6 @@
 = Presenting: GitHub Pull Request Builder
 
-:hp-image: images/github-status.png
+:hp-image: /hubpress.github.io/images/github-status.png
 :published_at: 2016-04-22
 
 GitHub's existing PR (Pull Request) feature makes it easy to see what changed between branches,
