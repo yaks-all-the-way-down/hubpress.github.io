@@ -7,7 +7,8 @@
   "site": {
     "title": "Yaks All The Way Down",
     "description": "Shave time - learn from our time spent shaving yaks!",
-    "logo": "/hubpress.github.io/images/yak.png"
+    "logo": "/hubpress.github.io/images/yak.png",
+    "cover": "/hubpress.github.io/images/github-status.png"
   },
   "socialnetwork": {
     "twitter": "",
