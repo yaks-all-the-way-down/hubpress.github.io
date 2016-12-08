@@ -2,7 +2,8 @@
   "meta": {
     "username": "yaks-all-the-way-down",
     "repositoryName": "hubpress.github.io",
-    "branch": "gh-pages"
+    "branch": "gh-pages",
+    "cname": "yaks-all-the-way-down.com"
   },
   "site": {
     "title": "Yaks All The Way Down",
