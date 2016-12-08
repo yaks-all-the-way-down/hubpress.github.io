@@ -1,14 +1,14 @@
 {
   "meta": {
     "username": "yaks-all-the-way-down",
-    "repositoryName": "hubpress.github.io",
+    "repositoryName": "yaks-all-the-way-down.github.io",
     "branch": "master",
     "cname": "yaks-all-the-way-down.com"
   },
   "site": {
     "title": "Yaks All The Way Down",
     "description": "Save time - let us shave those yaks!",
-    "logo": "/hubpress.github.io/images/yak.png",
+    "logo": "/images/yak.png",
     "cover": "",
     "googleAnalytics": "UA-77782034-1"
   },
