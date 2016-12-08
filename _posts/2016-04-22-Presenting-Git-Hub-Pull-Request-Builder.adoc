@@ -2,7 +2,7 @@
 
 :hp-image: /images/github-status.png
 :published_at: 2016-04-22
-:hp-tags: github, pull request
+:hp-tags: github,pull request
 
 GitHub's existing PR (Pull Request) feature makes it easy to see what changed between branches,
 but it doesn't always give you the full picture. If you have any kind of automated testing and 
