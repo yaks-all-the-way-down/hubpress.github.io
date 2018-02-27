@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Presenting: GitHub Pull Request Builder</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://yaks-all-the-way-down.github.io/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//yaks-all-the-way-down.github.io/themes/casper/assets/css/screen.css?v=1519760098226" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    <link rel="canonical" href="https://yaks-all-the-way-down.github.io/2016/04/22/Presenting-Git-Hub-Pull-Request-Builder.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Yaks All The Way Down" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Presenting: GitHub Pull Request Builder" />
+    <meta property="og:description" content="GitHub&amp;#8217;s existing PR (Pull Request) feature makes it easy to see what changed between branches, but it doesn&amp;#8217;t always give you the full picture. If you have any kind of automated testing and currently use Jenkins, the following plugin can give you a full picture of" />
+    <meta property="og:url" content="https://yaks-all-the-way-down.github.io/2016/04/22/Presenting-Git-Hub-Pull-Request-Builder.html" />
+    <meta property="article:tag" content="github" />
+    <meta property="article:tag" content="pull request" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Presenting: GitHub Pull Request Builder" />
+    <meta name="twitter:description" content="GitHub&amp;#8217;s existing PR (Pull Request) feature makes it easy to see what changed between branches, but it doesn&amp;#8217;t always give you the full picture. If you have any kind of automated testing and currently use Jenkins, the following plugin can give you a full picture of" />
+    <meta name="twitter:url" content="https://yaks-all-the-way-down.github.io/2016/04/22/Presenting-Git-Hub-Pull-Request-Builder.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Yaks All The Way Down" href="https://yaks-all-the-way-down.github.io/rss/" />
+</head>
+<body class="post-template tag-github tag-pull-request nav-closed">
+
+    
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head " style="background-image: url(/images/github-status.png)">
+    <nav class="main-nav overlay clearfix">
+        <a class="blog-logo" href="https://yaks-all-the-way-down.github.io"><img src="/images/yak.png" alt="Yaks All The Way Down" /></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post tag-github tag-pull-request">
+
+        <header class="post-header">
+            <h1 class="post-title">Presenting: GitHub Pull Request Builder</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2016-04-22">22 April 2016</time>  on <a href="https://yaks-all-the-way-down.github.io/tag/github/">github</a>, <a href="https://yaks-all-the-way-down.github.io/tag/pull-request/">pull request</a>
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>GitHub&#8217;s existing PR (Pull Request) feature makes it easy to see what changed between branches,
+but it doesn&#8217;t always give you the full picture. If you have any kind of automated testing and
+currently use Jenkins, the following plugin can give you a full picture of the impact when you&#8217;re ready to
+merge a request.</p>
+</div>
+<div class="paragraph">
+<p>The <a href="https://wiki.jenkins-ci.org/display/JENKINS/GitHub+pull+request+builder+plugin">GitHub Pull Request Builder</a> plugin
+is an easy way to plug your own Jenkins jobs into a pull request. High level features:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Can run any job you can set up in Jenkins</p>
+</li>
+<li>
+<p>Simple whitelist permissions for running PR jobs</p>
+</li>
+<li>
+<p>Trigger phrases for running specific jobs</p>
+</li>
+<li>
+<p>Test results are published into PR status on GitHub</p>
+</li>
+<li>
+<p>Retry jobs with a phrase, in case of a setup issue with a job</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_installation">Installation</h4>
+<div class="paragraph">
+<p>There are no special instructions for installing the plugin - do as you normally would.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_configuring_a_sample_job">Configuring a sample job</h4>
+<div class="paragraph">
+<p><span class="image"><img src="http://yaks-all-the-way-down.com/images/github-pull-request-builder-sample-job1.png" alt="SCM"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You will need to configure the <strong>Source Code Management</strong> section of your job specifically for the plugin.
+Note in the image above, the <strong>Name</strong>, <strong>Refspec</strong>, and <strong>Branch Specifier</strong> sections - these ensure the plugin can view changes in PR&#8217;s
+and the job runs against the correct commit hash. You will need to click the <strong>Advanced</strong> button to view some of the above fields.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://yaks-all-the-way-down.com/images/github-pull-request-builder-sample-job2.png" alt="Build Triggers"></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You will need to select the <strong>Advanced</strong> and <strong>Trigger Setup</strong> buttons to view all of the fields shown above. Here&#8217;s an explanation
+of the available options:
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a id="Admin-List"></a>Admin list: If you would like to approve running a job against a PR, then list here the github users that can approve running the job.
+Our team is small enough that everyone is automatically approved (see the <a href="#Organization">Organization</a> section).</p>
+</li>
+<li>
+<p><a id="GitHub-Hook"></a>Use GitHub hooks: You may either set the job to poll for new PR&#8217;s to run against (see the <a href="#Crontab">Crontab</a> section),
+or if you check this box, and have GitHub hooks set up, Jenkins will be told when a new PR has been created.</p>
+</li>
+<li>
+<p><a id="Trigger-Phrase"></a>Trigger phrase: You can specify a trigger phrase (with regex) to run the job. This can be used to re-run
+a job without making changes to the PR, in case of an environmental build failure for example.</p>
+</li>
+<li>
+<p><a id="Only-Use-Trigger-Phrase"></a>Only use trigger phrase: Selecting this box will suppress running the job on a PR until the
+trigger phrase is found in a PR description or comment.</p>
+</li>
+<li>
+<p><a id="Close-Failed"></a>Close failed pull request automatically: I&#8217;ve never used this option, but my guess is the name is
+self-explanatory.</p>
+</li>
+<li>
+<p><a id="Skip-Build-Phrase"></a>Skip build phrase: You can specify a phrase (with regex) that, if mentioned in the PR description,
+will suppress running this job. &lt;br/&gt;<strong>As of May 2016, this feature is broken, and can only be set in the global plugin settings</strong>.</p>
+</li>
+<li>
+<p><a id="Display-Build-Errors"></a>Display build errors on downstream builds: I could not find any documentation on this feature, and
+looking at the code indicates that nothing is using it, so use at your own peril.</p>
+</li>
+<li>
+<p><a id="Crontab"></a>Crontab: If you are not using GitHub webhooks, then you will need to set a schedule of when the job should
+look for PR&#8217;s to run against. In the sample job image, we&#8217;re checking every 2 minutes.</p>
+</li>
+<li>
+<p><a id="Whitelist"></a>Whitelist: If you choose not to whitelist entire organizations (see the <a href="#Organization">Organization</a> section),
+you have the option to whitelist teams or users. Those who are whitelisted will not require approval to run the job against their PR.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://yaks-all-the-way-down.com/images/github-pull-request-builder-sample-job3.png" alt="Build Triggers Contd"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a id="Organization"></a>Whitelist Organizations: Check this if you want everyone in the listed organizations
+to be automatically approved, which will trigger the job when the PR is opened.</p>
+</li>
+<li>
+<p><a id="Allow-Whitelist-Admins"></a>Allow whitelisted members of organizations as admins: Selecting this box will allow the above
+whitelisted organizations to act as admins, without naming them individually in the <a href="#Admin-List">Admin List</a>.</p>
+</li>
+<li>
+<p><a id="Build-Every-Pull-Request"></a>Build every pull request automatically without asking: Selecting this box will skip checking the PR
+for trigger, skip or build phrases, or permissions, and just run the job every time. <strong>Risky</strong>.</p>
+</li>
+<li>
+<p><a id="Build-Description"></a>Build description template: The default Jenkins job description will use the PR number and PR title.
+If you would like to change it, you can here.</p>
+</li>
+<li>
+<p><a id="Whitelist-Branches"></a>Whitelist target branches: By adding a branch (or branches) here, it will restrict the job to only
+PR&#8217;s merging into those branches.</p>
+</li>
+<li>
+<p><a id="Trigger-Setup"></a>Trigger setup: At a minimum, I recommend changing the <strong>Commit Status Context</strong> to be specific to this job.
+If you have multiple job running on each PR, you will see this name displayed in the list of checks on the PR.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_impact_on_your_pr">Impact on your PR</h4>
+<div class="paragraph">
+<p>Once you have a few jobs configured to check your PR&#8217;s, and you have run some of them, you will see something like this image
+below on your PR:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://yaks-all-the-way-down.com/images/github-pull-request-builder-sample-job4.png" alt="Build Triggers Contd"></span></p>
+</div>
+<div class="paragraph">
+<p>Now you have a better understanding of the impact of your PR, and can keep breaking updates out of your parent branches until you&#8217;re ready!</p>
+</div>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="https://yaks-all-the-way-down.github.io/author/garadox/" style="background-image: url(https://avatars3.githubusercontent.com/u/466469?v&#x3D;4)"><span class="hidden">Gareth Harcombe-Minson's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="https://yaks-all-the-way-down.github.io/author/garadox/">Gareth Harcombe-Minson</a></h4>
+
+                    <p>DevOps Engineer and advocate of all things Docker. Working on slowing down the Earth&#x27;s rotation to get more done in a single day.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">USA</span>
+                    <span class="author-link icon-link"><a href="http://yaks-all-the-way-down.com">http://yaks-all-the-way-down.com</a></span>
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Presenting%3A%20GitHub%20Pull%20Request%20Builder&amp;url=https://yaks-all-the-way-down.github.io/2016/04/22/Presenting-Git-Hub-Pull-Request-Builder.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://yaks-all-the-way-down.github.io/2016/04/22/Presenting-Git-Hub-Pull-Request-Builder.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://yaks-all-the-way-down.github.io/2016/04/22/Presenting-Git-Hub-Pull-Request-Builder.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="https://yaks-all-the-way-down.github.io">Yaks All The Way Down</a> &copy; 2018</section>
+            <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+    <script type="text/javascript" src="//yaks-all-the-way-down.github.io/themes/casper/assets/js/jquery.fitvids.js?v=1519760098226"></script>
+    <script type="text/javascript" src="//yaks-all-the-way-down.github.io/themes/casper/assets/js/index.js?v=1519760098226"></script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-77782034-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
